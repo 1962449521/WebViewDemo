@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,87 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUr-1l-xY8">
+                                <rect key="frame" x="0.0" y="20" width="600" height="72"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQs-fC-uMV">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="72"/>
+                                        <state key="normal" title="后退"/>
+                                        <connections>
+                                            <action selector="onGoBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lyq-Bg-DR2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMy-OM-UfF" userLabel="Load Button">
+                                        <rect key="frame" x="450" y="0.0" width="150" height="72"/>
+                                        <state key="normal" title="加载"/>
+                                        <connections>
+                                            <action selector="onLoad:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ch-Ub-ThF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUe-EQ-idh">
+                                        <rect key="frame" x="150" y="0.0" width="150" height="72"/>
+                                        <state key="normal" title="前进"/>
+                                        <connections>
+                                            <action selector="onGoForward:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6sc-Pl-lKq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0X8-Fu-tIe" userLabel="Reload Button">
+                                        <rect key="frame" x="300" y="0.0" width="150" height="72"/>
+                                        <state key="normal" title="刷新"/>
+                                        <connections>
+                                            <action selector="onReload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Cd-LC-gGi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.065068038284386343" blue="0.040931640398870206" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="QUe-EQ-idh" firstAttribute="centerY" secondItem="fUr-1l-xY8" secondAttribute="centerY" id="2Dq-HP-hh3"/>
+                                    <constraint firstAttribute="trailing" secondItem="IMy-OM-UfF" secondAttribute="trailing" id="3Yo-Z7-FQQ"/>
+                                    <constraint firstAttribute="height" constant="72" id="4Ij-zA-NgF"/>
+                                    <constraint firstItem="QUe-EQ-idh" firstAttribute="leading" secondItem="qQs-fC-uMV" secondAttribute="trailing" id="5iE-sw-Dgq"/>
+                                    <constraint firstItem="IMy-OM-UfF" firstAttribute="width" secondItem="fUr-1l-xY8" secondAttribute="width" multiplier="0.25" id="BCV-zd-e10"/>
+                                    <constraint firstItem="0X8-Fu-tIe" firstAttribute="width" secondItem="fUr-1l-xY8" secondAttribute="width" multiplier="0.25" id="Dfu-P5-NX7"/>
+                                    <constraint firstItem="0X8-Fu-tIe" firstAttribute="centerY" secondItem="fUr-1l-xY8" secondAttribute="centerY" id="HnD-iK-PKA"/>
+                                    <constraint firstItem="IMy-OM-UfF" firstAttribute="height" secondItem="fUr-1l-xY8" secondAttribute="height" id="JMb-RD-HaF"/>
+                                    <constraint firstItem="qQs-fC-uMV" firstAttribute="width" secondItem="fUr-1l-xY8" secondAttribute="width" multiplier="0.25" id="PoV-bX-EdJ"/>
+                                    <constraint firstItem="qQs-fC-uMV" firstAttribute="leading" secondItem="fUr-1l-xY8" secondAttribute="leading" id="QvX-Vz-cjs"/>
+                                    <constraint firstItem="QUe-EQ-idh" firstAttribute="height" secondItem="fUr-1l-xY8" secondAttribute="height" id="RHh-G6-YYU"/>
+                                    <constraint firstItem="QUe-EQ-idh" firstAttribute="width" secondItem="fUr-1l-xY8" secondAttribute="width" multiplier="0.25" id="WNh-Ke-3Fk"/>
+                                    <constraint firstItem="qQs-fC-uMV" firstAttribute="height" secondItem="fUr-1l-xY8" secondAttribute="height" id="aNu-R0-c5a"/>
+                                    <constraint firstItem="IMy-OM-UfF" firstAttribute="centerY" secondItem="fUr-1l-xY8" secondAttribute="centerY" id="cUr-tf-pHW"/>
+                                    <constraint firstItem="0X8-Fu-tIe" firstAttribute="leading" secondItem="QUe-EQ-idh" secondAttribute="trailing" id="fDX-b7-GyK"/>
+                                    <constraint firstItem="qQs-fC-uMV" firstAttribute="centerY" secondItem="fUr-1l-xY8" secondAttribute="centerY" id="rbq-Lz-byZ"/>
+                                    <constraint firstItem="0X8-Fu-tIe" firstAttribute="height" secondItem="fUr-1l-xY8" secondAttribute="height" id="x98-Oz-0AY"/>
+                                </constraints>
+                            </view>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1U-Lf-gIJ">
+                                <rect key="frame" x="0.0" y="92" width="600" height="508"/>
+                                <color key="backgroundColor" red="0.63137254899999995" green="1" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="X1U-Lf-gIJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HY9-C6-SbX"/>
+                            <constraint firstItem="X1U-Lf-gIJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="IlI-oa-4k7"/>
+                            <constraint firstItem="X1U-Lf-gIJ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" constant="-92" id="Knc-24-U7k"/>
+                            <constraint firstItem="fUr-1l-xY8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gH3-Aa-wY0"/>
+                            <constraint firstItem="X1U-Lf-gIJ" firstAttribute="top" secondItem="fUr-1l-xY8" secondAttribute="bottom" id="hxF-aD-Qiy"/>
+                            <constraint firstItem="fUr-1l-xY8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="vv6-MS-WhM"/>
+                            <constraint firstItem="fUr-1l-xY8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="zbz-f6-duc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gobackButton" destination="qQs-fC-uMV" id="YuR-vh-azt"/>
+                        <outlet property="goforwardButton" destination="QUe-EQ-idh" id="oqO-ap-u3h"/>
+                        <outlet property="loadButton" destination="IMy-OM-UfF" id="5nt-Fa-6EL"/>
+                        <outlet property="reloadButton" destination="0X8-Fu-tIe" id="9hg-wr-Kku"/>
+                        <outlet property="webview" destination="X1U-Lf-gIJ" id="hXh-er-Izf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="418"/>
         </scene>
     </scenes>
 </document>
