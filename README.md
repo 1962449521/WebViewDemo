@@ -14,6 +14,9 @@ https://webkit.org/blog/427/webkit-page-cache-i-the-basics/
 </br>
 
 UIWebView have Page Cache, that is include in WebBackForwardList. **BUT** default page cache size in UIWebView is **ZERO**,  that make pageCache disable.
+</br>
+
+WKWebView's pageCache is enable default, but WKWebView could **NOT** be hijacked by NSURLProtocol.
 
 </br>
 ##### How to enable Page Cache ?
