@@ -1,0 +1,7 @@
+*.o
+*.a
+.DS_Store
+.tags
+tags
+WebViewDemo.xcodeproj/xcuserdata/*
+WebViewDemo.xcodeproj/project.xcworkspace/*
