@@ -1,18 +1,18 @@
 //
-//  ViewController.m
+//  WebViewController.m
 //  WebViewDemo
 //
 //  Created by 吴昕 on 3/24/16.
 //  Copyright © 2016 ChinaNetCenter. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "WebViewController.h"
 
-@interface ViewController () <UIWebViewDelegate>
+@interface WebViewController () <UIWebViewDelegate>
 
 @end
 
-@implementation ViewController
+@implementation WebViewController
 {
     BOOL _pageCacheDisable;
 }
@@ -64,4 +64,5 @@
 -(IBAction) onReload:(UIButton *)button {
     [self.webview reload];
 }
+
 @end

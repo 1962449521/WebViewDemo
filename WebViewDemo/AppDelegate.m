@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "libWSPX/WSPX.h"
+
+#define WspxEnable (1)
 
 @interface AppDelegate ()
 
@@ -17,10 +20,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+#if (WspxEnable)
+    [WSPX start];
+#endif
     
     [[NSUserDefaults standardUserDefaults] setInteger:2 forKey: @"WebKitCacheModelPreferenceKey"];
     [[NSUserDefaults standardUserDefaults] setInteger:1 forKey: @"WebKitMediaPlaybackAllowsInline"];
+    
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSLog(@"docPath : %@", docPath);
     return YES;
 }
 
@@ -36,6 +44,9 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+#if (WspxEnable)
+    [WSPX activate];
+#endif
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

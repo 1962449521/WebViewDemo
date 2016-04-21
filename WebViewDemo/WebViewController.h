@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  WebViewController.h
 //  WebViewDemo
 //
 //  Created by 吴昕 on 3/24/16.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface WebViewController : UIViewController
 {
     
 }
