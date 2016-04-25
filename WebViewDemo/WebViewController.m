@@ -34,8 +34,8 @@
     self.webview.allowsInlineMediaPlayback = NO;
     self.webview.backgroundColor = [UIColor redColor];
     
-    [self.webview loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://m.toutiao.com"]]];
-    
+//    [self.webview loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://m.toutiao.com"]]];
+    [self.webview loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://m.taobao.com"]]];    
     if (_pageCacheDisable) {
         id webView = [self.webview valueForKeyPath:@"_internal.browserView._webView"];
         id preferences = [webView valueForKey:@"preferences"];
@@ -58,11 +58,28 @@
 }
 
 -(IBAction) onLoad:(UIButton*)button {
-    [self.webview loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://m.toutiao.com"]]];
+//    [self.webview loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://m.toutiao.com"]]];
+    [self.webview loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://m.taobao.com"]]];  
 }
 
 -(IBAction) onReload:(UIButton *)button {
     [self.webview reload];
 }
 
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    NSLog(@"shouldStartLoadWithRequest -- >  %@", request.URL.absoluteString);
+    return YES;
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    NSLog(@"webViewDidStartLoad -- >");
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSLog(@"shouldStartLoadWithRequest -- >");
+}
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error {
+    NSLog(@"webViewDidFinishLoad -- > : %@", error);
+}
 @end

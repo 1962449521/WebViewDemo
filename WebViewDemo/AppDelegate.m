@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "libWSPX/WSPX.h"
 
-#define WspxEnable (1)
+#define WspxEnable (0)
 
 @interface AppDelegate ()
 

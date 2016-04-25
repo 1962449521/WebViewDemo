@@ -182,15 +182,11 @@
     NSLog(@"fail  -> error(%@)\n", error);
     if (!error && task.state == NSURLSessionTaskStateCompleted) {
         // 下载一个文件结束
+        NSString* text = nil;
         _repeat -= 1;
         [self cancel];
         if (_repeat > 0) {
             [self start];
-        } else {
-            NSLog(@"test end....\n");
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSString* text = nil;
             if (_totalRecvBytes > 1024 * 1024 * 1024) {
                 text = [NSString stringWithFormat:@"接收到%0.2lf GB", _totalRecvBytes * 1.0 / (1024*1024*1024)];
             } else if (_totalRecvBytes > 1024 * 1024) {
@@ -200,6 +196,11 @@
             } else {
                 text = [NSString stringWithFormat:@"接收到%d Bytes", _totalRecvBytes];
             }
+        } else {
+            NSLog(@"test end....\n");
+            text = @"测试结束！";
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
             _label.text = text;
         });
         NSLog(@"session download task complete....");
